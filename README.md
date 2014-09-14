@@ -2,9 +2,5 @@ Simple program to check if specified services are running and start them if they
 
 Meant to be used as a cron job if not using a CM tool.
 
-Usage: 
-	Add services as needed to services(). 
-	# chmod +x service-monitor.py
-	# ./service-monitor.py
+Add services as needed to services(). 
 
-For now, the service must be added to chkconfig.
