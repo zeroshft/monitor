@@ -25,6 +25,3 @@ def main():
 def service():
   services = ['tomcat','puppet']
   return services
-
-service()
-main()
