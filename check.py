@@ -3,10 +3,16 @@
 # Meant to be used as a cron job if not using a CM tool.
 # For now, the service must be added to chkconfig.
 import os, subprocess
+
+def getservices():
+  with open('services.txt') as f:
+    service = f.read().splitlines() 
+    return service
+
 def main():
-  if os.getuid() !=0:
+  if  os.getuid() !=0:
    exit("Please run as root")
-  services = service()
+  services = getservices()
   print "Checking:", services
   for x in services:
     try:
@@ -22,6 +28,3 @@ def main():
           print ('could not start '+x) 
     except:
       exit("The operation failed!")
-def service():
-  services = ['tomcat','puppet']
-  return services
